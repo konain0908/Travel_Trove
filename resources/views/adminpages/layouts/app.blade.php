@@ -40,6 +40,7 @@
 
    <main id="main" class="main" style="height: 100vh">
    @yield('admincontent')
+   @yield('destinations')
    </main>
 
    @include('adminpages.layouts.footer')

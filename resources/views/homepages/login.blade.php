@@ -1,3 +1,6 @@
+@extends('layouts.headerfooter')
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,6 +43,19 @@
 
 <body>
 
+<div class="hero hero-inner">
+    <div class="container" >
+      <div class="row align-items-center">
+        <div class="col-lg-6 mx-auto text-center">
+          <div class="intro-wrap">
+            <h1 class="mb-0">Login</h1>
+            <p class="text-white">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <main>
     <div class="container">
 
@@ -66,7 +82,7 @@
 
                   @include('homepages._message')
 
-                  <form class="row g-3 needs-validation" action="/" method="post" novalidate>
+                  <form class="row g-3 needs-validation" action="{{route('auth')}}" method="post" novalidate>
                      @csrf
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Email</label>
@@ -135,3 +151,5 @@
 </body>
 
 </html>
+
+@endsection
