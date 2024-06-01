@@ -17,6 +17,18 @@
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link " href="{{route('of')}}">
+          <i class="bi bi-grid"></i>
+          <span>Offers Form</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{{route('so')}}">
+          <i class="bi bi-grid"></i>
+          <span>show offers</span>
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link " href="{{route('sd')}}">
           <i class="bi bi-grid"></i>
           <span>Show Destinations </span>

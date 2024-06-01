@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\popular_destination;
+use App\Models\offer;
+
 
 class Auth_Controller extends Controller
 {
