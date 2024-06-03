@@ -13,14 +13,10 @@
                         <input type="date" class="form-control" id="date" name="date" required>
                     </div>
                     <div class="form-group">
-                        <label for="country">Country</label>
-                        <select class="form-control" name="country">
-                    <option value="">Select</option>
-                    @foreach ($des as $d)
-                    <option value="{{ $d->id }}">{{ $d->country }}</option>
-                    @endforeach
-                  </select>
+                        <label for="name"> country</label>
+                        <input type="text" class="form-control" id="country" name="country" required>
                     </div>
+                    
                     <div class="form-group">
                         <label for="country">Price</label>
                         <input type="text" class="form-control" id="price" name="price" required>

@@ -20,7 +20,7 @@ class OfferController extends Controller
         // Process the validated data
         // For example, store the offer in the database
         $offer = new Offer();
-        $offer->coun_id = $request->country;
+        $offer->country = $request->country;
         $offer->price = $request->price;
         $offer->date = $request->date;
         
@@ -40,12 +40,12 @@ class OfferController extends Controller
         return redirect()->back();
     }
 
-    public function country()
-    { 
-        $des = popular_destination::all(); // Retrieve all records
+    // public function country()
+    // { 
+    //     $des = popular_destination::all(); // Retrieve all records
         
-        return view('adminpages.layouts.offers', compact('des'));
-    }
+    //     return view('adminpages.layouts.offers', compact('des'));
+    // }
     public function showoffer(){
         $so=offer::all(); 
         return view('adminpages.layouts.showoffers', compact('so')); 

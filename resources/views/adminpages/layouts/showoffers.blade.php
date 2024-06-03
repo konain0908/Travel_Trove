@@ -28,7 +28,7 @@
                     @foreach($so as $s)
                     <tr>
                         <td>{{ $s->id }}</td>
-                        <td>{{ $s->coun_id}}</td>
+                        <td>{{ $s->country}}</td>
                         <td>{{ $s->date }}</td>
                         <td>{{ $s->price }}</td>
                         <td> <img src="{{ asset('offerImage/' . $s->image) }}" alt="Image" width="100" height="100"></td>

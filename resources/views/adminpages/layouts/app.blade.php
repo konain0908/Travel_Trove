@@ -40,6 +40,8 @@
 
    <main id="main" class="main" style="height: 100vh">
    @yield('admincontent')
+   @yield('usercontent')
+
    @yield('destinations')
    </main>
 

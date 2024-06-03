@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class offer extends Model
 {
     use HasFactory;
@@ -18,7 +19,8 @@ class offer extends Model
     protected $fillable = [
         'image',
         'date',
-        'coun_id',
+        'country',
         'price',
     ];
+   
 }

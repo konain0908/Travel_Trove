@@ -47,26 +47,12 @@
 
 				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
 					<li class="active"><a href="/">Home</a></li>
-					<li class="has-children">
-						<a href="#">Dropdown</a>
-						<ul class="dropdown">
-							<li><a href="elements.html">Elements</a></li>
-							<li><a href="#">Menu One</a></li>
-							<li class="has-children">
-								<a href="#">Menu Two</a>
-								<ul class="dropdown">
-									<li><a href="#">Sub Menu One</a></li>
-									<li><a href="#">Sub Menu Two</a></li>
-									<li><a href="#">Sub Menu Three</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Menu Three</a></li>
-						</ul>
-					</li>
+					
 					<li><a href="{{route('service')}}">Services</a></li>
 					<li><a href="{{route('about')}}">About</a></li>
 					<li><a href="{{route('contact')}}">Contact Us</a></li>
 					<li><a href="{{route('login')}}">Login</a></li>
+					<li><a href="{{route('reg')}}">Register</a></li>
 
 				</ul>
 

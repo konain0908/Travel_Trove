@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class popular_destination extends Model
 {
     use HasFactory;
@@ -21,4 +22,5 @@ class popular_destination extends Model
         'city',
         'image',
     ];
+   
 }

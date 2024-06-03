@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("image");
             $table->date("date");
-            $table->unsignedBigInteger('coun_id');
-            $table->foreign('coun_id')->references('id')->on('popular_destinations')->onUpdate('cascade')->onDelete('cascade');
+          $table->string("country");
             $table->float("price");
             $table->timestamps();
         });
