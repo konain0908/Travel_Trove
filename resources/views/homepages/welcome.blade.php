@@ -170,67 +170,18 @@
 			</div>
 
 			<div class="owl-carousel owl-3-slider">
+			@foreach ($des as $d)
+    <div class="item">
+        <a class="media-thumb" href="images/hero-slider-1.jpg" data-fancybox="gallery">
+            <div class="media-text">
+                <h3>{{ $d->dsestination_name }}</h3>
+                <span class="location">{{ $d->country }}</span>
+            </div>
+            <img src="{{ asset('destinationImage/' . $d->image) }}" alt="Image" class="img-fluid">
+        </a> 
+    </div>
+@endforeach
 
-				<div class="item">
-					<a class="media-thumb" href="images/hero-slider-1.jpg" data-fancybox="gallery">
-						<div class="media-text">
-							<h3>Pragser Wildsee</h3>
-							<span class="location">Italy</span>
-						</div>
-						<img src="{{ asset('assets/frontend/images/hero-slider-1.jpg') }}" alt="Image" class="img-fluid">
-					</a> 
-				</div>
-
-				<div class="item">
-					<a class="media-thumb" href="{{ asset('assets/frontend/images/hero-slider-2.jpg') }}" data-fancybox="gallery">
-						<div class="media-text">
-							<h3>Oia</h3>
-							<span class="location">Greece</span>
-						</div>
-						<img src="{{ asset('assets/frontend/images/hero-slider-2.jpg') }}" alt="Image" class="img-fluid">
-					</a> 
-				</div>
-
-				<div class="item">
-					<a class="media-thumb" href="{{ asset('assets/frontend/images/hero-slider-3.jpg') }}" data-fancybox="gallery">
-						<div class="media-text">
-							<h3>Perhentian Islands</h3>
-							<span class="location">Malaysia</span>
-						</div>
-						<img src="{{ asset('assets/frontend/images/hero-slider-3.jpg') }}" alt="Image" class="img-fluid">
-					</a> 
-				</div>
-
-
-				<div class="item">
-					<a class="media-thumb" href="{{ asset('assets/frontend/images/hero-slider-4.jpg') }}" data-fancybox="gallery">
-						<div class="media-text">
-							<h3>Rialto Bridge</h3>
-							<span class="location">Italy</span>
-						</div>
-						<img src="{{ asset('assets/frontend/images/hero-slider-4.jpg') }}" alt="Image" class="img-fluid">
-					</a> 
-				</div>
-
-				<div class="item">
-					<a class="media-thumb" href="{{ asset('assets/frontend/images/hero-slider-5.jpg') }}" data-fancybox="gallery">
-						<div class="media-text">
-							<h3>San Francisco, United States</h3>
-							<span class="location">United States</span>
-						</div>
-						<img src="{{ asset('assets/frontend/images/hero-slider-5.jpg') }}" alt="Image" class="img-fluid">
-					</a> 
-				</div>
-
-				<div class="item">
-					<a class="media-thumb" href="{{ asset('assets/frontend/images/hero-slider-1.jpg') }}" data-fancybox="gallery">
-						<div class="media-text">
-							<h3>Lake Thun</h3>
-							<span class="location">Switzerland</span>
-						</div>
-						<img src="{{ asset('assets/frontend/images/hero-slider-2.jpg') }}" alt="Image" class="img-fluid">
-					</a> 
-				</div>
 
 			</div>
 
@@ -250,77 +201,20 @@
 				</div>
 			</div>
 			<div class="row">
+			@foreach($offr as $o)
 				<div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
 					<div class="media-1">
-						<a href="#" class="d-block mb-3"><img src="{{ asset('assets/frontend/images/hero-slider-1.jpg') }}" alt="Image" class="img-fluid"></a>
+						<a href="#" class="d-block mb-3"><img src="{{ asset('offerImage/' . $o->image) }}" alt="Image" class="img-fluid"></a>
 						<span class="d-flex align-items-center loc mb-2">
 							<span class="icon-room mr-3"></span>
-							<span>Italy</span>
-						</span>
-						<div class="d-flex align-items-center">
-							<div>
-								<h3><a href="#">Rialto Mountains</a></h3>
-								<div class="price ml-auto">
-									<span>$520.00</span>
-								</div>
-							</div>
-							
-						</div>
-						
-					</div>
-				</div>
-				<div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-					<div class="media-1">
-						<a href="#" class="d-block mb-3"><img src="{{ asset('assets/frontend/images/hero-slider-2.jpg') }}" alt="Image" class="img-fluid"></a>
-						<span class="d-flex align-items-center loc mb-2">
-							<span class="icon-room mr-3"></span>
-							<span>United States</span>
-						</span>
-						<div class="d-flex align-items-center">
-							<div>
-								<h3><a href="#">San Francisco</a></h3>
-								<div class="price ml-auto">
-									<span>$520.00</span>
-								</div>
-							</div>
-							
-						</div>
-						
-					</div>
-				</div>
-				<div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-					<div class="media-1">
-						<a href="#" class="d-block mb-3"><img src="{{ asset('assets/frontend/images/hero-slider-3.jpg') }}" alt="Image" class="img-fluid"></a>
-						<span class="d-flex align-items-center loc mb-2">
-							<span class="icon-room mr-3"></span>
-							<span>Malaysia</span>
-						</span>
-						<div class="d-flex align-items-center">
-							<div>
-								<h3><a href="#">Perhentian Islands</a></h3>
-								<div class="price ml-auto">
-									<span>$750.00</span>
-								</div>
-							</div>
-							
-						</div>
-						
-					</div>
-				</div>
-				<div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-					<div class="media-1">
-						<a href="#" class="d-block mb-3"><img src="{{ asset('assets/frontend/images/hero-slider-4.jpg') }}" alt="Image" class="img-fluid"></a>
+							<span>{{ $o->country}}</span>
 
-						<span class="d-flex align-items-center loc mb-2">
-							<span class="icon-room mr-3"></span>
-							<span>Switzerland</span>
 						</span>
-
 						<div class="d-flex align-items-center">
 							<div>
-								<h3><a href="#">Lake Thun</a></h3>
+								<h3>{{ $o->date }}</h3>
 								<div class="price ml-auto">
-									<span>$520.00</span>
+									<span>{{ $o->price }}</span>
 								</div>
 							</div>
 							
@@ -328,6 +222,8 @@
 						
 					</div>
 				</div>
+				@endforeach
+
 			</div>
 		</div>
 	</div>

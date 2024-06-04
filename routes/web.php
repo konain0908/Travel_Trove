@@ -1,16 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShowController;
 use App\Http\Controllers\Auth_Controller;
-use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\OfferController;
+use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\RegistrationController;
 
 
 
-Route::get('/', function () {
-    return view('homepages.welcome');
-});
+
 
 Route::get('services', function () {
     return view('homepages.services');
@@ -47,6 +46,7 @@ Route::post('/offers', [OfferController::class, 'offerstore'])->name('off.store'
 Route::get('/showdestinations',[Auth_Controller::class, 'showdestinations'])->name('sd');
 
 
+
 // Route::get('/offer',[OfferController::class, 'country'])->name("of");
 Route::get('/showoffer',[OfferController::class, 'showoffer'])->name("so");
 
@@ -75,5 +75,13 @@ Route::delete('destinations/{id}', [DestinationController::class, 'deleteDestina
 
 Route::get('destinations/{id}/edit', [DestinationController::class, 'edit'])->name('des.edit');
 Route::put('destinations/{id}', [DestinationController::class, 'update'])->name('des.update');
+
+
+Route::post('/search', [DestinationController::class, 'search'])->name('search');
+
+Route::get('/', [ShowController::class, 'showdestinations']);
+
+
+
 
 

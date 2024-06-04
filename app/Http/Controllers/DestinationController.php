@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\popular_destination;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redirect;
 
 class DestinationController extends Controller
 {
+   
+    
+    
+    
     public function store(Request $request)
     {
         // Validate request data
@@ -80,23 +85,55 @@ public function update(Request $request, $id)
     // Validate the request data
     $request->validate([
         'destination_name' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
-            'city' => 'required|string|max:255',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        
-        // Add more validation rules as needed
+        'country' => 'required|string|max:255',
+        'city' => 'required|string|max:255',
+        'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ]);
 
     // Find the destination by ID
     $des = popular_destination::findOrFail($id);
 
     // Update destination details
-    $des->update($request->all());
+    $des->dsestination_name = $request->input('destination_name');
+    $des->country = $request->input('country');
+    $des->city = $request->input('city');
+
+    // Handle file upload
+    if ($request->hasFile('image')) {
+        // Delete the old image if it exists
+        if ($des->image && file_exists(public_path('destinationImage/' . $des->image))) {
+            unlink(public_path('destinationImage/' . $des->image));
+        }
+
+        // Store the new image
+        $image = $request->file('image');
+        $filename = time().'.'.$image->getClientOriginalExtension();
+        $path = public_path('destinationImage/');
+        $image->move($path, $filename);
+        $des->image = $filename;
+    }
+
+    // Save the updated destination details
+    $des->save();
 
     // Redirect back with success message
     return redirect()->route('sd')->with('success', 'Destination updated successfully.');
-
 }
+
+public function search(Request $request)
+{
+    $query = $request->input('query');
+
+    // Retrieve all results matching the search query
+    $results = popular_destination::where('city', 'LIKE', '%' . $query . '%')->get();
+
+    // Paginate all results (if needed)
+    $resultsPaginated = $results->paginate(10); // Adjust the pagination size as needed
+
+    return view('adminpages.layouts.showdestinations', compact('resultsPaginated'));
+}
+
+
 
     
 }
