@@ -34,6 +34,8 @@
           <span>Show Destinations </span>
         </a>
       </li>
+
+     
       @if (!empty($permissionUser))
       <li class="nav-item">
         <a class="nav-link collapsed" href="">

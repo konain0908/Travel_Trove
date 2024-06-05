@@ -43,6 +43,8 @@
    @yield('usercontent')
 
    @yield('destinations')
+  
+
    </main>
 
    @include('adminpages.layouts.footer')
