@@ -45,12 +45,9 @@ Route::post('/destinations', [DestinationController::class, 'store'])->name('des
 Route::post('/offers', [OfferController::class, 'offerstore'])->name('off.store');
 
 Route::get('/showdestinations',[Auth_Controller::class, 'showdestinations'])->name('sd');
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 0b2be589f5c198e098de10083560c12cf4b9f66f
 // Route::get('/offer',[OfferController::class, 'country'])->name("of");
 Route::get('/showoffer',[OfferController::class, 'showoffer'])->name("so");
 
