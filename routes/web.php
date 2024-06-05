@@ -72,14 +72,11 @@ Route::get('destinations/{id}/edit', [DestinationController::class, 'edit'])->na
 Route::put('destinations/{id}', [DestinationController::class, 'update'])->name('des.update');
 
 
-<<<<<<< HEAD
-=======
 Route::post('/search', [DestinationController::class, 'search'])->name('search');
 
 Route::get('/', [ShowController::class, 'showdestinations']);
 
 
 
->>>>>>> 0b2be589f5c198e098de10083560c12cf4b9f66f
 
 
