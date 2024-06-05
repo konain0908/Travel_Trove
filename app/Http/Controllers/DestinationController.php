@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\popular_destination;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redirect;
 
 class DestinationController extends Controller
 {
+   
+    
+    
+    
     public function store(Request $request)
     {
         // Validate request data
@@ -115,6 +120,23 @@ public function update(Request $request, $id)
     return redirect()->route('sd')->with('success', 'Destination updated successfully.');
 }
 
+<<<<<<< HEAD
+=======
+public function search(Request $request)
+{
+    $query = $request->input('query');
+
+    // Retrieve all results matching the search query
+    $results = popular_destination::where('city', 'LIKE', '%' . $query . '%')->get();
+
+    // Paginate all results (if needed)
+    $resultsPaginated = $results->paginate(10); // Adjust the pagination size as needed
+
+    return view('adminpages.layouts.showdestinations', compact('resultsPaginated'));
+}
+
+
+>>>>>>> 0b2be589f5c198e098de10083560c12cf4b9f66f
 
     
 }

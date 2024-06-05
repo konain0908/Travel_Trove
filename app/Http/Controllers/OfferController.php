@@ -50,6 +50,8 @@ class OfferController extends Controller
         $so=offer::all(); 
         return view('adminpages.layouts.showoffers', compact('so')); 
     }
+
+    
     
 
 

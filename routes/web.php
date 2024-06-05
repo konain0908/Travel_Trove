@@ -1,18 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShowController;
 use App\Http\Controllers\Auth_Controller;
-use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\OfferController;
+use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\RoleController;
 
 
 
 
-Route::get('/', function () {
-    return view('homepages.welcome');
-});
+
 
 Route::get('services', function () {
     return view('homepages.services');
@@ -46,6 +45,12 @@ Route::post('/destinations', [DestinationController::class, 'store'])->name('des
 Route::post('/offers', [OfferController::class, 'offerstore'])->name('off.store');
 
 Route::get('/showdestinations',[Auth_Controller::class, 'showdestinations'])->name('sd');
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 0b2be589f5c198e098de10083560c12cf4b9f66f
 // Route::get('/offer',[OfferController::class, 'country'])->name("of");
 Route::get('/showoffer',[OfferController::class, 'showoffer'])->name("so");
 
@@ -67,5 +72,14 @@ Route::get('destinations/{id}/edit', [DestinationController::class, 'edit'])->na
 Route::put('destinations/{id}', [DestinationController::class, 'update'])->name('des.update');
 
 
+<<<<<<< HEAD
+=======
+Route::post('/search', [DestinationController::class, 'search'])->name('search');
+
+Route::get('/', [ShowController::class, 'showdestinations']);
+
+
+
+>>>>>>> 0b2be589f5c198e098de10083560c12cf4b9f66f
 
 
