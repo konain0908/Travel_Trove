@@ -81,6 +81,11 @@
                   </div>
 
                   @include('homepages._message')
+                  @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
 
                   <form class="row g-3 needs-validation" action="{{route('register.submit')}}" method="post" novalidate>
                      @csrf
@@ -88,7 +93,10 @@
 
                      <div class="col-12">
                         <label for="yourName" class="form-label">Name</label>
-                        <input type="text" name="name" class="form-control" id="yourName" required>
+                        <input type="text" name="name" class="form-control" id="yourName" >
+                        @error('name')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                         <div class="invalid-feedback">Please enter your name.</div>
                       </div>
 
@@ -96,14 +104,20 @@
                       <label for="yourUsername" class="form-label">Email</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="email" class="form-control" id="yourUsername" required>
+                        <input type="text" name="email" class="form-control" id="yourUsername" >
+                        @error('email')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                         <div class="invalid-feedback">Please enter your email.</div>
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
+                      <input type="password" name="password" class="form-control" id="yourPassword" >
+                      @error('password')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
 
@@ -111,7 +125,10 @@
 
                       <div class="col-12">
                         <label for="confirmPassword" class="form-label">Confirm Password</label>
-                        <input type="password" name="password_confirmation" class="form-control" id="confirmPassword" required>
+                        <input type="password" name="password_confirmation" class="form-control" id="confirmPassword" >
+                        @error('password_confirmation')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                         <div class="invalid-feedback">Please confirm your password.</div>
                       </div>
 

@@ -1,6 +1,6 @@
-@extends('adminpages.layouts.app')
+@extends('userpages.app')
 
-@section('destinations')
+@section('usercontent')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +15,7 @@
         <div class="row">
             <div class="col-8">
                 <h1 class="text-center ">offers List</h1>
-                @if(Auth::user()->role_id == 1)  
-                <a href="{{route('of')}}" class="btn btn-primary btn-sm mb-3 ">Add New</a>@endif
+                <a href="{{route('of')}}" class="btn btn-primary btn-sm mb-3 ">Add New</a>
                 <table class="table table-bordered table-striped">
                     <tr>
                         <th>Id</th>
@@ -24,9 +23,6 @@
                         <th>date</th>
                         <th>price</th>
                         <th>Image</th>
-                        @if(Auth::user()->role_id == 1)  
-                       <th colspan="2" class="text-center">Action</th>
-                       @endif
                        
                     </tr>
                     @foreach($so as $s)
@@ -34,22 +30,8 @@
                         <td>{{ $s->id }}</td>
                         <td>{{ $s->country}}</td>
                         <td>{{ $s->date }}</td>
-                        <td><span>$</span>{{ $s->price }} </td>
+                        <td>{{ $s->price }}</td>
                         <td> <img src="{{ asset('offerImage/' . $s->image) }}" alt="Image" width="100" height="100"></td>
-                        <td>    @if(Auth::user()->role_id == 1)  
-                                <a href="{{ route('off.edit', ['id' => $s->id]) }}" class="btn btn-primary btn-sm">Edit</a>
-                             @endif
-                            </td>
-                            <td>
-                            @if(Auth::user()->role_id == 1)  
-                                <form action="{{ route('off.delete', ['id' => $s->id]) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                 
-                                </form>
-                                @endif
-                            </td>
                        
                     </tr>
                     @endforeach 

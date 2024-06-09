@@ -10,6 +10,10 @@ class role extends Model
     use HasFactory;
     use HasFactory;
 
+  protected $table='roles';
+  static public function getRecord(){
+    return Role::get();
+ }
     /**
      * The attributes that are mass assignable.
      *

@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="{{ asset('assets/frontend/css/aos.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
 
-	<title>Tour Free Bootstrap Template for Travel Agency by Untree.co</title>
+	<title>Travel Trove</title>
 </head>
 
 <body>

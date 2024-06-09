@@ -13,7 +13,7 @@ use App\Models\User;
 class Auth_Controller extends Controller
 {
     public function showdestinations(){
-        $des=popular_destination::paginate(1);
+        $des=popular_destination::paginate(2);
         return view('adminpages.layouts.showdestinations', compact('des')); // Pass the variable to the view
     }
 

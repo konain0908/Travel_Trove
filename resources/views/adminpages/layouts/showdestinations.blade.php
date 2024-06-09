@@ -21,7 +21,7 @@
 <div class="container">
     <div class="row">
         <div class="col-8">
-            <h1 class="text-center">Destinations List</h1>
+            <h1 class="text-center mt-2">Destinations List</h1>
             <a href="{{ route('ds') }}" class="btn btn-primary btn-sm mb-3">Add New</a>
             @if ($message = Session::get('success'))
                 <div class="alert alert-success">
