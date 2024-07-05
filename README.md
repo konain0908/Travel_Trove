@@ -3,7 +3,7 @@ Project Overview
 Travel Trove is a web application developed using PHP Laravel framework, designed to provide users with an enhanced travel booking experience. It includes dynamic user and admin dashboards, showcasing popular destinations and offers. This project is a collaboration between Konain Zehra, Madeha Batool, and Sabeen Kumail under the organization Codegirls.
 
 Installation
-Clone the repository: git clone https://github.com/username/repo.git
+Clone the repository: git clone https://github.com/konain0908/Travel_Trove.git
 Install dependencies: composer install
 Copy .env.example to .env and configure your environment variables.
 Generate application key: php artisan key:generate
